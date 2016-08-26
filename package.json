@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-api-template",
+  "version": "1.0.0",
+  "description": "Template for NodeJS REST API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/kevin-collins/nodejs-api-template.git"
+  },
+  "keywords": [
+    "api",
+    "template"
+  ],
+  "author": "Kevin Collins",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/kevin-collins/nodejs-api-template#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
