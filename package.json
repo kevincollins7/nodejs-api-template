@@ -18,6 +18,9 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/kevin-collins/nodejs-api-template#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.3.0"
   }
 }
