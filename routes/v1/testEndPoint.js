@@ -1,9 +1,9 @@
 'use strict';
 const express = require('express');
-var router = express.Router();
+const router = express.Router();
 
 router.get('/', function(req, res) {
-  var username = req.query.username;
+  let username = req.query.username;
   if (!username) {
     res.status(400).json({ error: 'Required parameter username is missing' });
     return;

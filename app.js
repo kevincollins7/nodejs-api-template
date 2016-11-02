@@ -2,13 +2,14 @@
 const http = require('http');
 const path = require('path');
 const favicon = require('serve-favicon');
+const logger = require('morgan');
 const bodyParser = require('body-parser');
 const express = require('express');
 
-var config;
-var debugModeOn;
+let config;
+let debugModeOn;
 
-var env = process.env.NODE_ENV || 'development';
+let env = process.env.NODE_ENV || 'development';
 switch (env) {
   case 'development':
     config = require('./config/config').development;
@@ -31,11 +32,12 @@ const app = express();
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(logger('[:date[web]] :method :url :status :response-time ms - :res[content-length]'));
 app.use('/v1', require('./routes/v1'));
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  let err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
@@ -67,7 +69,7 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
+  let bind = typeof port === 'string'
     ? 'Pipe ' + port
     : 'Port ' + port;
 
